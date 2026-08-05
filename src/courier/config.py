@@ -28,7 +28,7 @@ class ServiceConfig:
         DATABASE_URL or localhost connection.
     prometheus_port : int, optional
         Port number for Prometheus metrics HTTP server. Defaults to environment
-        variable PROMETHEUS_PORT or 8000.
+        variable COURIER_PROMETHEUS_PORT or 8000.
     broker_url : str, optional
         Message broker connection URL. Defaults to environment variable BROKER_URL
         or localhost AMQP connection.
@@ -101,7 +101,7 @@ class ServiceConfig:
         ),
     )
     prometheus_port: int = field(
-        default_factory=lambda: int(os.environ.get("PROMETHEUS_PORT", "8000")),
+        default_factory=lambda: int(os.environ.get("COURIER_PROMETHEUS_PORT", "8000")),
     )
     broker_url: str = field(
         default_factory=lambda: os.environ.get(

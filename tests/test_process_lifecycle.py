@@ -94,7 +94,7 @@ def _spawn(config: Path) -> subprocess.Popen[str]:
         # No collector is listening; a 5s force_flush per shutdown would
         # muddy the timing this test measures.
         "COURIER_TRACING_ENABLED": "false",
-        "PROMETHEUS_PORT": "0",
+        "COURIER_PROMETHEUS_PORT": "0",
         "COURIER_LOG_LEVEL": "INFO",
     }
     return subprocess.Popen(
